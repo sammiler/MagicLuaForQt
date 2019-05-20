@@ -1,0 +1,3 @@
+/Users/sammiler/MagicLuaForQt/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/sammiler/MagicLuaForQt/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/sammiler/MagicLuaForQt/cmake-build-debug/CMakeFiles/MagicLuaForQt.dir

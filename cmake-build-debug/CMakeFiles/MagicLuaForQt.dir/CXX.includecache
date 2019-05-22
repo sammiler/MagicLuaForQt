@@ -6,6 +6,28 @@
 
 #IncludeRegexTransform: 
 
+../CommonUtil/FuncParam.h
+string
+-
+vector
+-
+rttr/registration
+-
+
+../CommonUtil/Util.h
+string
+-
+
+../CommonUtil/param_template.h
+rttr/registration
+-
+typeinfo
+-
+FuncParam.h
+../CommonUtil/FuncParam.h
+Util.h
+../CommonUtil/Util.h
+
 ../ToolsEnv/include/rttr/access_levels.h
 rttr/detail/base/core_prerequisites.h
 ../ToolsEnv/include/rttr/rttr/detail/base/core_prerequisites.h
@@ -1531,4 +1553,8 @@ iostream
 -
 rttr/registration
 -
+param_template.h
+/Users/sammiler/MagicLuaForQt/param_template.h
+Util.h
+/Users/sammiler/MagicLuaForQt/Util.h
 

@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/sammiler/MagicLuaForQt/CommonUtil/FuncParam.cpp" "/Users/sammiler/MagicLuaForQt/cmake-build-debug/CMakeFiles/MagicLuaForQt.dir/CommonUtil/FuncParam.cpp.o"
   "/Users/sammiler/MagicLuaForQt/main.cpp" "/Users/sammiler/MagicLuaForQt/cmake-build-debug/CMakeFiles/MagicLuaForQt.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
@@ -12,6 +13,7 @@ set(CMAKE_CXX_COMPILER_ID "AppleClang")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../LuaEnv/include"
   "../ToolsEnv/include"
+  "../CommonUtil"
   )
 
 # Targets to which this target links.

@@ -46,6 +46,7 @@
 				<Compiler>
 					<Add directory="/Users/sammiler/MagicLuaForQt/LuaEnv/include"/>
 					<Add directory="/Users/sammiler/MagicLuaForQt/ToolsEnv/include"/>
+					<Add directory="/Users/sammiler/MagicLuaForQt/CommonUtil"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
@@ -69,6 +70,7 @@
 				<Compiler>
 					<Add directory="/Users/sammiler/MagicLuaForQt/LuaEnv/include"/>
 					<Add directory="/Users/sammiler/MagicLuaForQt/ToolsEnv/include"/>
+					<Add directory="/Users/sammiler/MagicLuaForQt/CommonUtil"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
@@ -84,6 +86,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/sammiler/MagicLuaForQt/CommonUtil/FuncParam.cpp">
+			<Option target="MagicLuaForQt"/>
+		</Unit>
+		<Unit filename="/Users/sammiler/MagicLuaForQt/CommonUtil/FuncParam.h">
+			<Option target="MagicLuaForQt"/>
+		</Unit>
+		<Unit filename="/Users/sammiler/MagicLuaForQt/CommonUtil/Util.h">
+			<Option target="MagicLuaForQt"/>
+		</Unit>
+		<Unit filename="/Users/sammiler/MagicLuaForQt/CommonUtil/param_template.h">
+			<Option target="MagicLuaForQt"/>
+		</Unit>
 		<Unit filename="/Users/sammiler/MagicLuaForQt/main.cpp">
 			<Option target="MagicLuaForQt"/>
 		</Unit>

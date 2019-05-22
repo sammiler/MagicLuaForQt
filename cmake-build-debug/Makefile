@@ -123,6 +123,33 @@ MagicLuaForQt/fast:
 	$(MAKE) -f CMakeFiles/MagicLuaForQt.dir/build.make CMakeFiles/MagicLuaForQt.dir/build
 .PHONY : MagicLuaForQt/fast
 
+CommonUtil/FuncParam.o: CommonUtil/FuncParam.cpp.o
+
+.PHONY : CommonUtil/FuncParam.o
+
+# target to build an object file
+CommonUtil/FuncParam.cpp.o:
+	$(MAKE) -f CMakeFiles/MagicLuaForQt.dir/build.make CMakeFiles/MagicLuaForQt.dir/CommonUtil/FuncParam.cpp.o
+.PHONY : CommonUtil/FuncParam.cpp.o
+
+CommonUtil/FuncParam.i: CommonUtil/FuncParam.cpp.i
+
+.PHONY : CommonUtil/FuncParam.i
+
+# target to preprocess a source file
+CommonUtil/FuncParam.cpp.i:
+	$(MAKE) -f CMakeFiles/MagicLuaForQt.dir/build.make CMakeFiles/MagicLuaForQt.dir/CommonUtil/FuncParam.cpp.i
+.PHONY : CommonUtil/FuncParam.cpp.i
+
+CommonUtil/FuncParam.s: CommonUtil/FuncParam.cpp.s
+
+.PHONY : CommonUtil/FuncParam.s
+
+# target to generate assembly for a file
+CommonUtil/FuncParam.cpp.s:
+	$(MAKE) -f CMakeFiles/MagicLuaForQt.dir/build.make CMakeFiles/MagicLuaForQt.dir/CommonUtil/FuncParam.cpp.s
+.PHONY : CommonUtil/FuncParam.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... MagicLuaForQt"
+	@echo "... CommonUtil/FuncParam.o"
+	@echo "... CommonUtil/FuncParam.i"
+	@echo "... CommonUtil/FuncParam.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

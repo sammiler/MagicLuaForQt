@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MagicLuaForQt.dir/main.cpp.o"
+  "CMakeFiles/MagicLuaForQt.dir/CommonUtil/FuncParam.cpp.o"
   "MagicLuaForQt.pdb"
   "MagicLuaForQt"
 )

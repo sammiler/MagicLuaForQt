@@ -9,186 +9,86 @@
 #include <typeinfo>
 #include "FuncParam.h"
 #include "Util.h"
+typedef int64_t  POINTER;
 using  namespace rttr;
 
-#define PARAM(id,t)  Param(id,spliteClassName(typeid(t).name()),type::get(t1).create())
+#define PARAM(id,T,t)  Param<T>(id,spliteClassName(typeid(t).name()),type::get(t).create(),t)
 
 template <typename T1>
-FuncParam getFuncParam(T1 t1)
+POINTER createParamList(T1 t1)
 {
-    FuncParam funcParam;
-    Param id = PARAM(0,t1);
-    funcParam.addParam(id);
-    return  funcParam;
+    FuncParamList<T1> pList;
+    Param<T1> p1 = PARAM(0,T1,t1);
+    return (POINTER)&pList;
 }
-
-template <typename T1,typename  T2>
-FuncParam getFuncParam(T1 t1,T2 t2)
+template <typename T1,typename T2>
+POINTER createParamList(T1 t1,T2 t2)
 {
-    FuncParam funcParam;
-    Param id    = PARAM(0,t1);
-    Param id2   = PARAM(1,t2);
-    funcParam.addParam(id);
-    funcParam.addParam(id2);
-    return  funcParam;
+    FuncParamList<T1,T2> pList;
+    Param<T1> p1 = PARAM(0,T1,t1);
+    Param<T2> p2 = PARAM(1,T2,t2);
+    pList.setParam1(p1);
+    pList.setParam2(p2);
+    return (POINTER)&pList;
 }
-
-template <typename T1,typename  T2,typename  T3>
-FuncParam getFuncParam(T1 t1,T2 t2,T3 t3)
+template <typename T1,typename T2,typename T3>
+POINTER createParamList(T1 t1,T2 t2,T3 t3)
 {
-    FuncParam funcParam;
-    Param id    = PARAM(0,t1);
-    Param id2   = PARAM(1,t2);
-    Param id3   = PARAM(2,t3);
-    funcParam.addParam(id);
-    funcParam.addParam(id2);
-    funcParam.addParam(id3);
-    return  funcParam;
+    FuncParamList<T1,T2,T3> pList;
+    Param<T1> p1 = PARAM(0,T1,t1);
+    Param<T2> p2 = PARAM(1,T2,t2);
+    Param<T3> p3 = PARAM(2,T3,t3);
+    pList.setParam1(p1);
+    pList.setParam2(p2);
+    pList.setParam3(p3);
+    return (POINTER)&pList;
 }
-template <typename T1,typename  T2,typename  T3,typename T4>
-FuncParam getFuncParam(T1 t1,T2 t2,T3 t3,T4 t4)
+template <typename T1,typename T2,typename T3,typename  T4>
+POINTER createParamList(T1 t1,T2 t2,T3 t3,T4 t4)
 {
-    FuncParam funcParam;
-    Param id    = PARAM(0,t1);
-    Param id2   = PARAM(1,t2);
-    Param id3   = PARAM(2,t3);
-    Param id4   = PARAM(3,t4);
-    funcParam.addParam(id);
-    funcParam.addParam(id2);
-    funcParam.addParam(id3);
-    funcParam.addParam(id4);
-    return  funcParam;
+    FuncParamList<T1,T2,T3,T4> pList;
+    Param<T1> p1 = PARAM(0,T1,t1);
+    Param<T2> p2 = PARAM(1,T2,t2);
+    Param<T3> p3 = PARAM(2,T3,t3);
+    Param<T4> p4 = PARAM(3,T4,t4);
+    pList.setParam1(p1);
+    pList.setParam2(p2);
+    pList.setParam3(p3);
+    pList.setParam4(p4);
+    return (POINTER)&pList;
 }
-
-template <typename T1,typename  T2,typename  T3,typename T4,typename  T5>
-FuncParam getFuncParam(T1 t1,T2 t2,T3 t3,T4 t4,T5 t5)
+template <typename T1,typename T2,typename T3,typename  T4,typename  T5>
+POINTER createParamList(T1 t1,T2 t2,T3 t3,T4 t4,T5 t5)
 {
-    FuncParam funcParam;
-    Param id    = PARAM(0,t1);
-    Param id2   = PARAM(1,t2);
-    Param id3   = PARAM(2,t3);
-    Param id4   = PARAM(3,t4);
-    Param id5   = PARAM(4,t5);
-    funcParam.addParam(id);
-    funcParam.addParam(id2);
-    funcParam.addParam(id3);
-    funcParam.addParam(id4);
-    funcParam.addParam(id5);
-    return  funcParam;
+    FuncParamList<T1,T2,T3,T4,T5> pList;
+    Param<T1> p1 = PARAM(0,T1,t1);
+    Param<T2> p2 = PARAM(1,T2,t2);
+    Param<T3> p3 = PARAM(2,T3,t3);
+    Param<T4> p4 = PARAM(3,T4,t4);
+    Param<T5> p5 = PARAM(4,T5,t5);
+    pList.setParam1(p1);
+    pList.setParam2(p2);
+    pList.setParam3(p3);
+    pList.setParam4(p4);
+    pList.setParam5(p5);
+    return (POINTER)&pList;
 }
-
-template <typename T1,typename  T2,typename  T3,typename T4,typename  T5,typename T6>
-FuncParam getFuncParam(T1 t1,T2 t2,T3 t3,T4 t4,T5 t5,T6 t6)
+template <typename T1,typename T2,typename T3,typename  T4,typename  T5,typename  T6>
+POINTER createParamList(T1 t1,T2 t2,T3 t3,T4 t4,T5 t5,T6 t6)
 {
-    FuncParam funcParam;
-    Param id    = PARAM(0,t1);
-    Param id2   = PARAM(1,t2);
-    Param id3   = PARAM(2,t3);
-    Param id4   = PARAM(3,t4);
-    Param id5   = PARAM(4,t5);
-    Param id6   = PARAM(5,t6);
-    funcParam.addParam(id);
-    funcParam.addParam(id2);
-    funcParam.addParam(id3);
-    funcParam.addParam(id4);
-    funcParam.addParam(id5);
-    funcParam.addParam(id6);
-    return  funcParam;
-}
-
-template <typename T1,typename  T2,typename  T3,typename T4,typename  T5,typename T6,typename T7>
-FuncParam getFuncParam(T1 t1,T2 t2,T3 t3,T4 t4,T5 t5,T6 t6,T7 t7)
-{
-    FuncParam funcParam;
-    Param id    = PARAM(0,t1);
-    Param id2   = PARAM(1,t2);
-    Param id3   = PARAM(2,t3);
-    Param id4   = PARAM(3,t4);
-    Param id5   = PARAM(4,t5);
-    Param id6   = PARAM(5,t6);
-    Param id7   = PARAM(6,t7);
-    funcParam.addParam(id);
-    funcParam.addParam(id2);
-    funcParam.addParam(id3);
-    funcParam.addParam(id4);
-    funcParam.addParam(id5);
-    funcParam.addParam(id6);
-    funcParam.addParam(id7);
-    return  funcParam;
-}
-
-template <typename T1,typename  T2,typename  T3,typename T4,typename  T5,typename T6,typename T7,typename T8>
-FuncParam getFuncParam(T1 t1,T2 t2,T3 t3,T4 t4,T5 t5,T6 t6,T7 t7,T8 t8)
-{
-    FuncParam funcParam;
-    Param id    = PARAM(0,t1);
-    Param id2   = PARAM(1,t2);
-    Param id3   = PARAM(2,t3);
-    Param id4   = PARAM(3,t4);
-    Param id5   = PARAM(4,t5);
-    Param id6   = PARAM(5,t6);
-    Param id7   = PARAM(6,t7);
-    Param id8   = PARAM(7,t8);
-    funcParam.addParam(id);
-    funcParam.addParam(id2);
-    funcParam.addParam(id3);
-    funcParam.addParam(id4);
-    funcParam.addParam(id5);
-    funcParam.addParam(id6);
-    funcParam.addParam(id7);
-    funcParam.addParam(id8);
-    return  funcParam;
-}
-
-template <typename T1,typename  T2,typename  T3,typename T4,typename  T5,typename T6,typename T7,typename T8,typename  T9>
-FuncParam getFuncParam(T1 t1,T2 t2,T3 t3,T4 t4,T5 t5,T6 t6,T7 t7,T8 t8,T9 t9)
-{
-    FuncParam funcParam;
-    Param id    = PARAM(0,t1);
-    Param id2   = PARAM(1,t2);
-    Param id3   = PARAM(2,t3);
-    Param id4   = PARAM(3,t4);
-    Param id5   = PARAM(4,t5);
-    Param id6   = PARAM(5,t6);
-    Param id7   = PARAM(6,t7);
-    Param id8   = PARAM(7,t8);
-    Param id9   = PARAM(8,t9);
-    funcParam.addParam(id);
-    funcParam.addParam(id2);
-    funcParam.addParam(id3);
-    funcParam.addParam(id4);
-    funcParam.addParam(id5);
-    funcParam.addParam(id6);
-    funcParam.addParam(id7);
-    funcParam.addParam(id8);
-    funcParam.addParam(id9);
-    return  funcParam;
-}
-
-template <typename T1,typename  T2,typename  T3,typename T4,typename  T5,typename T6,typename T7,typename T8,typename  T9,typename T10>
-FuncParam getFuncParam(T1 t1,T2 t2,T3 t3,T4 t4,T5 t5,T6 t6,T7 t7,T8 t8,T9 t9,T10 t10)
-{
-    FuncParam funcParam;
-    Param id    = PARAM(0,t1);
-    Param id2   = PARAM(1,t2);
-    Param id3   = PARAM(2,t3);
-    Param id4   = PARAM(3,t4);
-    Param id5   = PARAM(4,t5);
-    Param id6   = PARAM(5,t6);
-    Param id7   = PARAM(6,t7);
-    Param id8   = PARAM(7,t8);
-    Param id9   = PARAM(8,t9);
-    Param id10  = PARAM(9,t10);
-    funcParam.addParam(id);
-    funcParam.addParam(id2);
-    funcParam.addParam(id3);
-    funcParam.addParam(id4);
-    funcParam.addParam(id5);
-    funcParam.addParam(id6);
-    funcParam.addParam(id7);
-    funcParam.addParam(id8);
-    funcParam.addParam(id9);
-    funcParam.addParam(id10);
-    return  funcParam;
+    FuncParamList<T1,T2,T3,T4,T5,T6> pList;
+    Param<T1> p1 = PARAM(0,T1,t1);
+    Param<T2> p2 = PARAM(1,T2,t2);
+    Param<T3> p3 = PARAM(2,T3,t3);
+    Param<T4> p4 = PARAM(3,T4,t4);
+    Param<T5> p5 = PARAM(4,T5,t5);
+    Param<T6> p6 = PARAM(5,T6,t6);
+    pList.setParam1(p1);
+    pList.setParam2(p2);
+    pList.setParam3(p3);
+    pList.setParam4(p4);
+    pList.setParam5(p5);
+    pList.setParam6(p6);
+    return (POINTER)&pList;
 }
 #endif //MAGICLUAFORQT_PARAM_TEMPLATE_H

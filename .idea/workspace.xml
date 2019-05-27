@@ -14,7 +14,6 @@
     <list default="true" id="8cbed7d5-9163-479c-8e21-cd279ceab115" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CommonUtil/FuncParam.h" beforeDir="false" afterPath="$PROJECT_DIR$/CommonUtil/FuncParam.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommonUtil/param_template.h" beforeDir="false" afterPath="$PROJECT_DIR$/CommonUtil/param_template.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -36,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="44" column="17" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="17" />
+            <state relative-caret-position="210">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="e#44#63#0" expanded="true" />
               </folding>
@@ -49,63 +48,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ToolsEnv/include/rttr/detail/method/method_invoker.h">
+        <entry file="file://$PROJECT_DIR$/CommonUtil/Util.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ToolsEnv/include/rttr/detail/method/method_accessor.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="168" selection-start-line="168" selection-end-line="168" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ToolsEnv/include/rttr/detail/method/method_wrapper.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="98" selection-start-line="98" selection-end-line="98" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../rttr/src/rttr/method.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="152" selection-start-line="152" selection-end-line="152" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CommonUtil/param_template.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-148">
-              <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
-              <folding>
-                <element signature="e#124#152#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CommonUtil/FuncParam.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="238" selection-start-line="238" selection-end-line="238" />
-              <folding>
-                <element signature="e#114#131#0" expanded="true" />
-                <element signature="e#568#735#0" expanded="true" />
-                <element signature="e#4096#4194#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -124,6 +70,31 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4230">
               <caret line="282" selection-start-line="282" selection-end-line="282" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonUtil/FuncParam.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3330">
+              <caret line="41" column="22" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="22" />
+              <folding>
+                <element signature="e#114#131#0" expanded="true" />
+                <element signature="e#279#292#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonUtil/param_template.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="28" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="28" />
+              <folding>
+                <element signature="e#124#152#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -151,15 +122,14 @@
         <option value="$PROJECT_DIR$/CommonUtil/Util.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/CommonUtil/FuncParam.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/CommonUtil/param_template.h" />
         <option value="$PROJECT_DIR$/CommonUtil/FuncParam.h" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="491" />
-    <option name="y" value="103" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="797" />
   </component>
@@ -243,23 +213,23 @@
       <workItem from="1558618126506" duration="17644000" />
       <workItem from="1558855609072" duration="4877000" />
       <workItem from="1558867663693" duration="4634000" />
+      <workItem from="1558872734623" duration="3123000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38989000" />
+    <option name="totallyTimeSpent" value="42112000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="797" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2918455" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29613733" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.52771086" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -268,8 +238,8 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32891566" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32891566" />
-      <window_info anchor="bottom" id="CMake" order="12" weight="0.32891566" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.38072288" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.32765958" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.38014185" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -307,8 +277,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>16</line>
-          <option name="timeStamp" value="13" />
+          <line>14</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -376,13 +346,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Developer/CommandLineTools/usr/include/c++/v1/string">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="3235" column="43" selection-start-line="3235" selection-start-column="43" selection-end-line="3235" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/string.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -428,13 +391,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ToolsEnv/include/rttr/variant.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5752">
-          <caret line="707" column="13" selection-start-line="707" selection-start-column="13" selection-end-line="707" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../rttr/src/rttr/detail/type/type_register.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
@@ -460,13 +416,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="306" selection-start-line="306" selection-end-line="306" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonUtil/Util.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
@@ -529,6 +478,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ToolsEnv/include/rttr/detail/method/method_invoker.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ToolsEnv/include/rttr/detail/method/method_accessor.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2520">
+          <caret line="168" selection-start-line="168" selection-end-line="168" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ToolsEnv/include/rttr/detail/variant/variant_impl.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2985">
@@ -543,24 +506,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CommonUtil/FuncParam.cpp">
+    <entry file="file:///Library/Developer/CommandLineTools/usr/include/c++/v1/string">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" selection-start-column="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ToolsEnv/include/rttr/detail/method/method_invoker.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ToolsEnv/include/rttr/detail/method/method_accessor.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="168" selection-start-line="168" selection-end-line="168" />
+        <state relative-caret-position="219">
+          <caret line="1227" column="22" selection-start-line="1227" selection-start-column="22" selection-end-line="1227" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -578,34 +527,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ToolsEnv/include/rttr/variant.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="779" column="20" selection-start-line="779" selection-start-column="20" selection-end-line="779" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/Util.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/FuncParam.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/param_template.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="28" />
+          <folding>
+            <element signature="e#124#152#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CommonUtil/FuncParam.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="238" selection-start-line="238" selection-end-line="238" />
+        <state relative-caret-position="-3330">
+          <caret line="41" column="22" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="22" />
           <folding>
             <element signature="e#114#131#0" expanded="true" />
-            <element signature="e#568#735#0" expanded="true" />
-            <element signature="e#4096#4194#0" expanded="true" />
+            <element signature="e#279#292#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="44" column="17" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="17" />
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="e#44#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonUtil/param_template.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-148">
-          <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
-          <folding>
-            <element signature="e#124#152#0" expanded="true" />
           </folding>
         </state>
       </provider>

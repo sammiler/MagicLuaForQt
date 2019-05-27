@@ -39,7 +39,7 @@ struct Param
             m.invoke(var);\
             return 0;  \
             }\
-        variant tempVar;\
+        static variant tempVar;\
         switch (param->paramSize()) \
         {\
             case 0:\
@@ -158,7 +158,6 @@ public:
         } else if (index == 2)
         {
             return type::get(list->getParam2().typeValue).create();
-
         } else if (index == 3)
         {
             return type::get(list->getParam3().typeValue).create();
@@ -177,27 +176,61 @@ public:
     {
         return getIndexVariant(paramList,index).to_int();
     }
+    int getFuncRetInt(const POINTER & retPtr)
+    {
+        variant  * var = (variant *)(retPtr);
+        int varInt = var->to_int();
+        return varInt;
+    }
     int64_t getInt64(const POINTER & paramList,const int & index)
     {
         return getIndexVariant(paramList,index).to_int64();
     }
-
+    int64_t getFuncRetInt64(const POINTER & retPtr)
+    {
+        variant * var = (variant *)(retPtr);
+        int64_t varInt64 = var->to_int64();
+        return varInt64;
+    }
     float getFloat(const POINTER & paramList,const int & index)
     {
         return getIndexVariant(paramList,index).to_float();
+    }
+    float getFuncRetFloat(const POINTER & retPtr)
+    {
+        variant * var = (variant *)(retPtr);
+        float  varFloat = var->to_float();
+        return varFloat;
     }
     double getDouble(const POINTER & paramList,const int & index)
     {
         return getIndexVariant(paramList,index).to_double();
     }
-
+    double getFuncRetDouble(const POINTER & retPtr)
+    {
+        variant * var = (variant *)(retPtr);
+        double varDouble = var->to_double();
+        return varDouble;
+    }
     bool getBool(const POINTER & paramList,const int & index)
     {
         return getIndexVariant(paramList,index).to_bool();
     }
-    string getString(const POINTER & paramList,const int & index)
+    bool getFuncRetBool(const POINTER & retPtr)
     {
-        return getIndexVariant(paramList,index).to_string();
+        variant * var = (variant *)(retPtr);
+        bool varBool = var->to_double();
+        return varBool;
+    }
+    const char * getString(const POINTER & paramList,const int & index)
+    {
+        return getIndexVariant(paramList,index).to_string().data();
+    }
+    const char * getFucRetString(const POINTER & retPtr)
+    {
+        variant * var = (variant *)(retPtr);
+        const  char * varString = var->to_string().data();
+        return varString;
     }
     template <typename P1,typename P2 = P1,typename P3 = P1,typename P4 = P1,typename P5 = P1,typename P6 = P1>
     static POINTER callVarFunc(const POINTER & funcP,const int & index,const string & funcName,const POINTER & paramList)

@@ -32,42 +32,8 @@ struct Param
     string type;
     T      typeValue;
 };
-#define METHOD(P1,P2,P3,P4,P5,P6,var,paramList,m) \
-        FuncParamList<P1,P2,P3,P4,P5,P6> *param = (FuncParamList<P1,P2,P3,P4,P5,P6>*)(paramList); \
-        if (!param) \
-        {            \
-            m.invoke(var);\
-            return 0;  \
-            }\
-        static variant tempVar;\
-        switch (param->paramSize()) \
-        {\
-            case 0:\
-            tempVar = m.invoke(var);\
-            return (POINTER)&tempVar;\
-            case 1: \
-            tempVar = m.invoke(var,param->getParam1().typeValue);\
-            return (POINTER)&tempVar; \
-            case 2: \
-            tempVar = m.invoke(var,param->getParam1().typeValue,param->getParam2().typeValue); \
-            return (POINTER)&tempVar; \
-            case 3:  \
-            tempVar = m.invoke(var,param->getParam1().typeValue,param->getParam2().typeValue,param->getParam3().typeValue); \
-            return (POINTER)&tempVar; \
-            case 4: \
-            tempVar = m.invoke(var,param->getParam1().typeValue,param->getParam2().typeValue,param->getParam3().typeValue,param->getParam4().typeValue);\
-            return (POINTER)&tempVar; \
-            case 5: \
-            tempVar = m.invoke(var,param->getParam1().typeValue,param->getParam2().typeValue,param->getParam3().typeValue,param->getParam4().typeValue),param->getParam5().typeValue; \
-            return (POINTER)&tempVar; \
-            case 6: \
-            tempVar = m.invoke(var,param->getParam1().typeValue,param->getParam2().typeValue,param->getParam3().typeValue,param->getParam4().typeValue,param->getParam5().typeValue,param->getParam6().typeValue); \
-            return (POINTER)&tempVar; \
-            default: \
-            return 0; \
-        }
 
-template <typename T1,typename T2 = T1,typename T3 = T1,typename T4 = T1,typename T5 = T1,typename T6 = T1,typename T7 = T1,typename T8 = T1,typename T9 = T1,typename T10 = T1>
+template <typename T1,typename T2 = T1,typename T3 = T1,typename T4 = T1,typename T5 = T1,typename T6 = T1>
 class FuncParamList {
 
 public:
@@ -79,30 +45,208 @@ public:
     {
 
     }
-    inline  void setParam1(const Param<T1> & param)
+    void setParam(const POINTER & ptr,const int & index)
     {
-        this->param1 = param;
+        if (index == 0)
+        {
+            Param<T1> * ptrParam = (Param<T1> *)(ptr);
+            param1 = *ptrParam;
+        } else if (index == 1)
+        {
+            Param<T2> * ptrParam = (Param<T2> *)(ptr);
+            param2 = *ptrParam;
+        } else if(index == 2)
+        {
+            Param<T3> * ptrParam = (Param<T3> *)(ptr);
+            param3 = *ptrParam;
+        } else if(index == 3)
+        {
+            Param<T4> * ptrParam = (Param<T4> *)(ptr);
+            param4 = *ptrParam;
+        } else if (index == 4)
+        {
+            Param<T5> * ptrParam = (Param<T5> *)(ptr);
+            param5 = *ptrParam;
+        } else if (index == 5)
+        {
+            Param<T6> * ptrParam = (Param<T6> *)(ptr);
+            param6 = *ptrParam;
+        }
     }
-    inline void setParam2(const Param<T2> & param)
+    POINTER  getIndexVarPtr(const int & index)
     {
-        this->param2 = param;
+        if (index == 0)
+        {
+            static variant var =  type::get(getParam1().typeValue).create();
+            return (POINTER)&var;
+        } else if (index == 1)
+        {
+            static variant var =  type::get(getParam2().typeValue).create();
+            return (POINTER)&var;
+        } else if (index == 2)
+        {
+            static variant var =  type::get(getParam3().typeValue).create();
+            return (POINTER)&var;
+        } else if (index == 3)
+        {
+            static variant var =  type::get(getParam4().typeValue).create();
+            return (POINTER)&var;
+        } else if (index == 4)
+        {
+            static variant var =  type::get(getParam5().typeValue).create();
+            return (POINTER)&var;
+        } else if (index == 5)
+        {
+            static variant var =  type::get(getParam6().typeValue).create();
+            return (POINTER)&var;
+        }
     }
-    inline void setParam3(const Param<T3> & param)
+    POINTER getIndexMethodPtr(const int & index,const string & funcName)
     {
-        this->param3 = param;
+        if (index == 0)
+        {
+            static method m = type::get(getParam1().typeValue).get_method(funcName);
+            return (POINTER)&m;
+        } else if (index == 1)
+        {
+            static method m = type::get(getParam2().typeValue).get_method(funcName);
+            return (POINTER)&m;
+        } else if (index == 2)
+        {
+            static method m = type::get(getParam3().typeValue).get_method(funcName);
+            return (POINTER)&m;
+        } else if (index == 3)
+        {
+            static method m = type::get(getParam4().typeValue).get_method(funcName);
+            return (POINTER)&m;
+        } else if (index == 4)
+        {
+            static method m = type::get(getParam5().typeValue).get_method(funcName);
+            return (POINTER)&m;
+        } else if (index == 5)
+        {
+            static method m = type::get(getParam6().typeValue).get_method(funcName);
+            return (POINTER)&m;
+        }
     }
-    inline void setParam4(const Param<T4> & param)
+    POINTER callFunc(const POINTER & m,const POINTER & var)
     {
-        this->param4 = param;
+        method   * m1 = (method *)m;
+        variant  * v  = (variant *)var;
+        static variant tempVar;
+        switch (paramSize())
+        {
+            case 0:
+            tempVar = m1->invoke(*v);
+            return (POINTER)&tempVar;
+            case 1:
+            tempVar = m1->invoke(*v,getParam1().typeValue);
+            return (POINTER)&tempVar;
+            case 2:
+            tempVar = m1->invoke(*v,getParam1().typeValue,getParam2().typeValue);
+            return (POINTER)&tempVar;
+            case 3:
+            tempVar = m1->invoke(*v,getParam1().typeValue,getParam2().typeValue,getParam3().typeValue);
+            return (POINTER)&tempVar;
+            case 4:
+            tempVar = m1->invoke(*v,getParam1().typeValue,getParam2().typeValue,getParam3().typeValue,getParam4().typeValue);
+            return (POINTER)&tempVar;
+            case 5:
+            tempVar = m1->invoke(*v,getParam1().typeValue,getParam2().typeValue,getParam3().typeValue,getParam4().typeValue),getParam5().typeValue;
+            return (POINTER)&tempVar;
+            case 6:
+            tempVar = m1->invoke(*v,getParam1().typeValue,getParam2().typeValue,getParam3().typeValue,getParam4().typeValue,getParam5().typeValue,getParam6().typeValue);
+            return (POINTER)&tempVar;
+            default:
+            return 0;
+        }
+
     }
-    inline void setParam5(const Param<T5> & param)
+    int  paramSize() const
     {
-        this->param5 = param;
+        vector<int> tempVec;
+        tempVec.push_back(param1.ID);
+        tempVec.push_back(param2.ID);
+        tempVec.push_back(param3.ID);
+        tempVec.push_back(param4.ID);
+        tempVec.push_back(param5.ID);
+        tempVec.push_back(param6.ID);
+        int vaildCount = 0;
+        for (auto iter = tempVec.begin(); iter != tempVec.end() ; ++iter) {
+            if(*iter >= 0)
+            {
+                ++vaildCount;
+            }
+        }
+        return vaildCount;
     }
-    inline void setParam6(const Param<T6> & param)
+    inline  const POINTER &  paramListToPtr()
     {
-        this->param6 = param;
+        return  (POINTER)(this);
     }
+    int getInt(const int & index)
+    {
+        return getIndexVariant(index).to_int();
+    }
+    int getFuncRetInt(const POINTER & retPtr)
+    {
+        variant  * var = (variant *)(retPtr);
+        int varInt = var->to_int();
+        return varInt;
+    }
+    int64_t getInt64(const int & index)
+    {
+        return getIndexVariant(index).to_int64();
+    }
+    int64_t getFuncRetInt64(const POINTER & retPtr)
+    {
+        variant * var = (variant *)(retPtr);
+        int64_t varInt64 = var->to_int64();
+        return varInt64;
+    }
+    float getFloat(const int & index)
+    {
+        return getIndexVariant(index).to_float();
+    }
+    float getFuncRetFloat(const POINTER & retPtr)
+    {
+        variant * var = (variant *)(retPtr);
+        float  varFloat = var->to_float();
+        return varFloat;
+    }
+    double getDouble(const int & index)
+    {
+        return getIndexVariant(index).to_double();
+    }
+    double getFuncRetDouble(const POINTER & retPtr)
+    {
+        variant * var = (variant *)(retPtr);
+        double varDouble = var->to_double();
+        return varDouble;
+    }
+    bool getBool(const int & index)
+    {
+        return getIndexVariant(index).to_bool();
+    }
+    bool getFuncRetBool(const POINTER & retPtr)
+    {
+        variant * var = (variant *)(retPtr);
+        bool varBool = var->to_double();
+        return varBool;
+    }
+    const char * getString(const int & index)
+    {
+        return getIndexVariant(index).to_string().data();
+    }
+    const char * getFucRetString(const POINTER & retPtr)
+    {
+        variant * var = (variant *)(retPtr);
+        const  char * varString = var->to_string().data();
+        return varString;
+    }
+
+
+private:
     inline Param<T1> getParam1()
     {
         return param1;
@@ -127,150 +271,28 @@ public:
     {
         return param6;
     }
-    inline  int  paramSize() const
+    variant getIndexVariant(const int & index)
     {
-        vector<int> tempVec;
-        tempVec.push_back(param1.ID);
-        tempVec.push_back(param2.ID);
-        tempVec.push_back(param3.ID);
-        tempVec.push_back(param4.ID);
-        tempVec.push_back(param5.ID);
-        tempVec.push_back(param6.ID);
-        int vaildCount = 0;
-        for (auto iter = tempVec.begin(); iter != tempVec.end() ; ++iter) {
-            if(*iter >= 0)
-            {
-                ++vaildCount;
-            }
-        }
-        return vaildCount;
-    }
-    inline  const POINTER &  paramListToPtr()
-    {
-        return  (POINTER)(this);
-    }
-    variant getIndexVariant(const POINTER & paramList, const int & index)
-    {
-        FuncParamList<T1,T2,T3,T4,T5,T6> * list = (FuncParamList<T1,T2,T3,T4,T5,T6>())(paramList);
         if (index == 1)
         {
-            return type::get(list->getParam1().typeValue).create();
+            return type::get(getParam1().typeValue).create();
         } else if (index == 2)
         {
-            return type::get(list->getParam2().typeValue).create();
+            return type::get(getParam2().typeValue).create();
         } else if (index == 3)
         {
-            return type::get(list->getParam3().typeValue).create();
+            return type::get(getParam3().typeValue).create();
         } else if (index == 4)
         {
-            return type::get(list->getParam4().typeValue).create();
+            return type::get(getParam4().typeValue).create();
         } else if (index == 5)
         {
-            return type::get(list->getParam5().typeValue).create();
+            return type::get(getParam5().typeValue).create();
         } else if (index == 6)
         {
-            return type::get(list->getParam6().typeValue).create();
+            return type::get(getParam6().typeValue).create();
         }
     }
-    int getInt(const POINTER & paramList,const int & index)
-    {
-        return getIndexVariant(paramList,index).to_int();
-    }
-    int getFuncRetInt(const POINTER & retPtr)
-    {
-        variant  * var = (variant *)(retPtr);
-        int varInt = var->to_int();
-        return varInt;
-    }
-    int64_t getInt64(const POINTER & paramList,const int & index)
-    {
-        return getIndexVariant(paramList,index).to_int64();
-    }
-    int64_t getFuncRetInt64(const POINTER & retPtr)
-    {
-        variant * var = (variant *)(retPtr);
-        int64_t varInt64 = var->to_int64();
-        return varInt64;
-    }
-    float getFloat(const POINTER & paramList,const int & index)
-    {
-        return getIndexVariant(paramList,index).to_float();
-    }
-    float getFuncRetFloat(const POINTER & retPtr)
-    {
-        variant * var = (variant *)(retPtr);
-        float  varFloat = var->to_float();
-        return varFloat;
-    }
-    double getDouble(const POINTER & paramList,const int & index)
-    {
-        return getIndexVariant(paramList,index).to_double();
-    }
-    double getFuncRetDouble(const POINTER & retPtr)
-    {
-        variant * var = (variant *)(retPtr);
-        double varDouble = var->to_double();
-        return varDouble;
-    }
-    bool getBool(const POINTER & paramList,const int & index)
-    {
-        return getIndexVariant(paramList,index).to_bool();
-    }
-    bool getFuncRetBool(const POINTER & retPtr)
-    {
-        variant * var = (variant *)(retPtr);
-        bool varBool = var->to_double();
-        return varBool;
-    }
-    const char * getString(const POINTER & paramList,const int & index)
-    {
-        return getIndexVariant(paramList,index).to_string().data();
-    }
-    const char * getFucRetString(const POINTER & retPtr)
-    {
-        variant * var = (variant *)(retPtr);
-        const  char * varString = var->to_string().data();
-        return varString;
-    }
-    template <typename P1,typename P2 = P1,typename P3 = P1,typename P4 = P1,typename P5 = P1,typename P6 = P1>
-    static POINTER callVarFunc(const POINTER & funcP,const int & index,const string & funcName,const POINTER & paramList)
-    {
-        if (funcP == 0)
-            return  0;
-        FuncParamList<T1,T2,T3,T4,T5,T6> *func  = (FuncParamList<T1,T2,T3,T4,T5,T6>*)(funcP);
-        if (index == 0)
-        {
-            method m = type::get(func->getParam1().typeValue).get_method(funcName);
-            variant var =  type::get(func->getParam1().typeValue).create();
-            METHOD(P1,P2,P3,P4,P5,P6,var,paramList,m)
-        } else if (index == 1)
-        {
-            method m = type::get(func->getParam2().typeValue).get_method(funcName);
-            variant var =  type::get(func->getParam2().typeValue).create();
-            METHOD(P1,P2,P3,P4,P5,P6,var,paramList,m)
-        } else if (index == 2)
-        {
-            method m = type::get(func->getParam3().typeValue).get_method(funcName);
-            variant var =  type::get(func->getParam3().typeValue).create();
-            METHOD(P1,P2,P3,P4,P5,P6,var,paramList,m)
-        } else if (index == 3)
-        {
-            method m = type::get(func->getParam4().typeValue).get_method(funcName);
-            variant var =  type::get(func->getParam4().typeValue).create();
-            METHOD(P1,P2,P3,P4,P5,P6,var,paramList,m)
-        } else if (index == 4)
-        {
-            method m = type::get(func->getParam5().typeValue).get_method(funcName);
-            variant var =  type::get(func->getParam5().typeValue).create();
-            METHOD(P1,P2,P3,P4,P5,P6,var,paramList,m)
-        } else if (index == 5)
-        {
-            method m = type::get(func->getParam6().typeValue).get_method(funcName);
-            variant var =  type::get(func->getParam6().typeValue).create();
-            METHOD(P1,P2,P3,P4,P5,P6,var,paramList,m)
-        }
-    }
-
 private:
     Param<T1>        param1;
     Param<T2>        param2;
@@ -279,5 +301,6 @@ private:
     Param<T5>        param5;
     Param<T6>        param6;
 };
+
 
 #endif //MAGICLUAFORQT_FUNCPARAM_H

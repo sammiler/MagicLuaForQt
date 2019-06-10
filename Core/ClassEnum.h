@@ -5,9 +5,10 @@
 #ifndef MAGICLUAFORQT_CLASSENUM_H
 #define MAGICLUAFORQT_CLASSENUM_H
 
+#define REGISTER_ENUM(ClassName) TYPE_##ClassName ,
 enum EnClassType
 {
-    TYPE_LObject = 0
+    REGISTER_ENUM(LObject)
 };
 
 #endif //MAGICLUAFORQT_CLASSENUM_H

@@ -7,11 +7,14 @@
 
 std::map<EnClassType ,std::string> ClassMap::typeToClassNameMap;
 
-ClassFactory<EnClassType::TYPE_LObject>::ClassFactory()
-{
-    ClassMap::insertPair(EnClassType::TYPE_LObject,getClassObject().getName());
-}
-LObject ClassFactory<TYPE_LObject>::getClassObject()
-{
-    return  TYPE_LObject;
-}
+#define CLASSIMPL(ClassName)  \
+ClassFactory<EnClassType::TYPE_##ClassName>::ClassFactory() \
+{ \
+    ClassMap::insertPair(EnClassType::TYPE_##ClassName,getClassObject().getName());    \
+} \
+ClassName ClassFactory<EnClassType::TYPE_##ClassName>::getClassObject() \
+{  \
+    return TYPE_##ClassName; \
+} \
+ClassFactory<EnClassType::TYPE_##ClassName> TYPE##ClassName;
+CLASSIMPL(LObject)

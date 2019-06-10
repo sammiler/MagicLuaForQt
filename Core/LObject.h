@@ -5,10 +5,9 @@
 #ifndef MAGICLUAFORQT_LOBJECT_H
 #define MAGICLUAFORQT_LOBJECT_H
 
-#include <rttr/type>
-#include <rttr/registration>
 #include <map>
 #include <vector>
+#include <string>
 #include "ClassEnum.h"
 typedef int64_t POINTER;
 
@@ -18,12 +17,12 @@ public:
     LObject(){}
     virtual  ~LObject(){}
 public:
-    virtual     std::string getName(){ return "";}
+    virtual     std::string getName();
     virtual     POINTER  callMemberFuc(const std::string & funcName,const POINTER & param){}
     virtual     POINTER  callPropertyFunc(const std::string & funcName,const POINTER & param){}
     virtual     void     assignProperty(const std::string & property, const POINTER & propertyValue){}
 
-public:
+private:
     std::map<std::string,std::vector<EnClassType >> funcName2Types;
 };
 

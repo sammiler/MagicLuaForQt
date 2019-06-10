@@ -28,13 +28,8 @@ public:
 
 };
 
-template <EnClassType  type>
+template <EnClassType type>
 class ClassFactory
-{
-
-};
-template <>
-class ClassFactory<EnClassType::TYPE_LObject>
 {
 public:
     ClassFactory();
@@ -42,4 +37,17 @@ public:
 private:
     LObject TYPE_LObject;
 };
+#define REGISTERCLASS(ClassName)  template <> class ClassFactory<TYPE_##ClassName> \
+    { \
+            public: \
+            ClassFactory(); \
+            ClassName getClassObject(); \
+           private: \
+            LObject TYPE_##ClassName;  \
+    };
+
+
+REGISTERCLASS(LObject)
+
+
 #endif //MAGICLUAFORQT_CLASSFACTORY_H

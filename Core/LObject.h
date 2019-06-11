@@ -21,6 +21,7 @@ public:
     virtual     POINTER  callMemberFuc(const std::string & funcName,const POINTER & param){}
     virtual     POINTER  callPropertyFunc(const std::string & funcName,const POINTER & param){}
     virtual     void     assignProperty(const std::string & property, const POINTER & propertyValue){}
+    virtual     POINTER  getParamPtr();
 
 private:
     std::map<std::string,std::vector<EnClassType >> funcName2Types;
